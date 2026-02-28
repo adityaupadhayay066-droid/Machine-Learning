@@ -9,7 +9,7 @@ plt.xlabel("Name of Student")
 plt.ylabel("Marks of Student")
 plt.title("Test marks analysis of Student")
 plt.ylim(0,35)
-
+plt.xlim()
 
 #Show data in line 
 plt.figure()
