@@ -12,10 +12,17 @@ def Remove(value):
     value = str(value).split("/")[0]
     return float(value)
 df["rate"] = df["rate"].apply(Remove)
-sns.barplot(x = "")
+plt.figure(figsize=(10,5))
+sns.countplot(x ="listed_in(type)", data=df, palette="cubehelix")
+plt.title("Restraunt Rating",fontweight="bold",size=20)
+plt.xlabel("Restraunt Type", fontweight="bold",size=16)
+plt.ylabel("Count",fontweight="bold",size=16)
+# plt.savefig("Restraunt_Rating.png")
+plt.xticks(rotation=45)
 
-# Graph plot 
-# plt.xlabel("Resturant Type")
-# plt.ylabel("Rating")
-# sns.barplot(x ="listed_in(type)", y = "rate", data=df, color="red")
-# plt.show()
+# Line plot 
+plt.figure(figsize=(10,5))
+sns.lineplot(x="listed_in(type)", y="votes", data=df,markers="o",color="#457087")
+plt.title("Restraunt voting",fontweight="bold",size=16)
+plt.show()
+
